@@ -11,9 +11,11 @@ gem 'rails', '4.2.7.1'
 # Use sqlite3 as the database for Active Record
 # sqlite3 for development and test db
 gem 'sqlite3', group: [:develpment, :test]
-#postgres for production db
+# postgres for production db
 gem 'pg', group: :production
 
+# add twitter bootstrap
+gem 'bootstrap-sass'
 # 12 factor for heroku
 gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
