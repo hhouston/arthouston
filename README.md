@@ -29,7 +29,7 @@ With this extension, users will be able to:
 
 ### Wireframes
 
-![wireframes](images/wireframes/home-page.png)
+![wireframes](docs/wireframes/home-page.png)
 
 ### Technologies & Technical Challenges
 
