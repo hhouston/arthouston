@@ -1,1 +1,36 @@
-Hello World!
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: $5.00</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <% hidden_field_tag 'stripeToken' %>
+  <% hidden_field_tag 'stripeEmail' %>
+  <button id="btn-buy" type="button" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Buy this!</button>
+  <script>
+    let handler = StripeCheckout.configure({
+      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+      token: function(token, arg) {
+        document.getElementById("stripeToken").value = token.id;
+        document.getElementById("stripeEmail").value = token.email;
+        document.getElementById("chargeForm").submit();
+
+      }
+    });
+    document.getElementById('btn-buy').addEventListener('click', function(e) {
+      handler.open({
+        name: 'Learn Rails',
+        description: 'Buy this item for ($4.99)',
+        amount: 499
+      });
+      e.preventDefault();
+    })
+  </script>
+<% end %>
