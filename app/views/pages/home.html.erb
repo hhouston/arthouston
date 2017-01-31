@@ -1,36 +1,36 @@
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
+<%= form_tag charges_path, id: 'stripeForm' do -%>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<article>
+    <%= label_tag 'amount', 'To Pay', class: 'amount' %>
+    <%= label_tag 'amount', "$#{@amount}.00", class: "amount-figure" %>
+</article>
+<br>
+<button id="stripe-button">&nbsp;</button>
+<%= hidden_field_tag 'stripeToken' %>
+<%= hidden_field_tag 'stripeEmail' %>
+<%= hidden_field_tag 'stripeAmount' %>
 
-  <script src="https://checkout.stripe.com/checkout.js"></script>
-  <% hidden_field_tag 'stripeToken' %>
-  <% hidden_field_tag 'stripeEmail' %>
-  <button id="btn-buy" type="button" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Buy this!</button>
-  <script>
+<script>
     let handler = StripeCheckout.configure({
-      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-      token: function(token, arg) {
-        document.getElementById("stripeToken").value = token.id;
-        document.getElementById("stripeEmail").value = token.email;
-        document.getElementById("chargeForm").submit();
-
-      }
+        key: "<%= Settings[Rails.env]['stripe']['publishable_key'] %>",
+        token: function (token, args) {
+            $("#stripeToken").value = token.id;
+            $("#stripeEmail").value = token.email;
+            $("#stripeAmount").value = <%= @amount %>;
+            $("#stripeForm").submit();
+        }
     });
-    document.getElementById('btn-buy').addEventListener('click', function(e) {
-      handler.open({
-        name: 'Learn Rails',
-        description: 'Buy this item for ($4.99)',
-        amount: 499
-      });
-      e.preventDefault();
-    })
-  </script>
+
+    $('#stripe-button').on('click', function (e) {
+        // Open Checkout with further options
+        handler.open({name: 'Your customer name', description: 'Your description goes here', amount: <%= @amount * 100 %>});
+        e.preventDefault();
+    });
+
+    $(window).on('popstate', function () {
+        handler.close();
+    });
+</script>
 <% end %>
+
+<main id="root"></main>
