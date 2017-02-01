@@ -16,9 +16,9 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'rails', '4.2.7.1'
 # Use sqlite3 as the database for Active Record
 # sqlite3 for development and test db
-gem 'sqlite3', group: [:develpment, :test]
+# gem 'sqlite3', group: [:develpment, :test]
 # postgres for production db
-gem 'pg', group: :production
+gem 'pg'
 # figaro to hide environment variables
 gem 'figaro'
 # add twitter bootstrap
