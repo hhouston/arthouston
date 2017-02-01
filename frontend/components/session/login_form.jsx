@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Modal from 'react-bootstrap/lib/Modal';
+import SignUpFormContainer from './signup_form_container';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -60,6 +61,8 @@ class SessionForm extends React.Component {
 
         const user = this.state;
         this.props.login({user});
+
+
     }
 
     renderErrors() {
@@ -76,6 +79,7 @@ class SessionForm extends React.Component {
 
     render() {
         const loginLink = <a href="#" onClick={this.openLoginModal}>Login</a>;
+
         let modal;
 
         if (this.state.showLoginModal === true) {

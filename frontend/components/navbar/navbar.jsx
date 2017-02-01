@@ -21,12 +21,14 @@ const loggedOut = () => (
             <div className="collapse navbar-collapse" id="navbar-collapse">
                 <form className="navbar-form navbar-left"></form>
                 <ul className="nav navbar-nav navbar-right">
+                  <div style={{ display:"flex", justifyContent:"center" }}>
                     <li>
                         <LoginFormContainer>Login</LoginFormContainer>
                     </li>
                     <li>
                         <SignUpFormContainer>Sign Up</SignUpFormContainer>
                     </li>
+                  </div>
                 </ul>
             </div>
         </div>

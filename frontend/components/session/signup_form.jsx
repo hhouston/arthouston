@@ -93,8 +93,6 @@ class SessionForm extends React.Component {
 
                       <input type="submit" value="Submit"/>
               </form>
-              <p>Already have an account? <LoginFormContainer /></p>
-
             </Modal>;
 
         return (
