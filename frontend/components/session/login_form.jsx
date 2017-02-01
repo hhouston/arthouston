@@ -114,7 +114,6 @@ class SessionForm extends React.Component {
         return (
             <div>
                 {loginLink}
-
                 {modal}
             </div>
 
