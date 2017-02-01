@@ -1,6 +1,5 @@
 import React from 'react';
 import NavbarContainer from './navbar/navbar_container';
-import SessionFormContainer from './session/session_form_container';
 
 const App = ({ children }) => (
   <div>

@@ -15,13 +15,14 @@ class Home extends React.Component {
             <div className="splash-title">
 
                 <h2 className="scarebnb-title">
-                  <span>ScareBnB </span>
-                  <p>a mobile friendly site to book spooky adventures.</p>
+                  <span>ArtHouston</span>
+                  <p>portfolio page for katherine houston</p>
                 </h2>
               </div>
           </section>
 
           <section className="home-content">
+            
           </section>
 
           <section className="home-search-container">
