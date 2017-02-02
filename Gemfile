@@ -16,9 +16,9 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'rails', '4.2.7.1'
 # Use sqlite3 as the database for Active Record
 # sqlite3 for development and test db
-# gem 'sqlite3', group: [:develpment, :test]
+gem 'sqlite3', group: [:develpment, :test]
 # postgres for production db
-gem 'pg'
+gem 'pg', group: [:production]
 # figaro to hide environment variables
 gem 'figaro'
 # add twitter bootstrap
@@ -34,8 +34,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
