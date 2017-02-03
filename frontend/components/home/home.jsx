@@ -10,7 +10,7 @@ class Home extends React.Component {
 
         $('#fullpage').fullpage({
             sectionsColor: [
-                'rgba(255, 255, 255, .4)', '#999', 'whitesmoke', '#777'
+                'whitesmoke', '#999', 'whitesmoke', '#777'
             ],
             anchors: [
                 'home', 'art', 'bio', 'contact'
@@ -24,7 +24,7 @@ class Home extends React.Component {
             afterRender: function() {
                 //on page load, start the slideshow
                 slideTimeout = setInterval(function() {
-                    $.fn.fullpage.moveSlideRight();
+                    // $.fn.fullpage.moveSlideRight();
                 }, 5000);
             },
 
@@ -44,7 +44,7 @@ class Home extends React.Component {
             <div className="splash-page">
 
                 <header id="header">
-                    <ul className="nav">
+                    <ul id="nav">
                         <li data-menuanchor="home">
                             <a href="#home">home</a>
 
@@ -65,16 +65,31 @@ class Home extends React.Component {
                 </header>
                 <div id="fullpage">
                     <div className="section" id="section0">
-                      <div className="bg"></div>
                       <div className="jumbotron">
                         <h1>Katherine Houston Studios</h1>
                         <p className="lead">+ Upcoming: Genesis Valentines Showing: February 14th, Saturday</p>
                       </div>
+                      <button data-menuanchor="art">
+                        <a href="#art">art</a>
+                      </button>
                     </div>
+
                     <div className="section" id="section1">
-                        <div className="slide slideOne">first slide in slideshow</div>
-                        <div className="slide slideTwo">second slide in slideshow</div>
-                        <div className="slide slideThree">third slide in slideshow</div>
+                        <div className="slide slideOne">
+
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151559/Kathrine_Houston_0173_frzajo.jpg" alt="blue trey"/>
+
+                        </div>
+                        <div className="slide slideTwo">
+                          <img src="http://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151363/Kathrine_Houston_0156_i2sk7a.jpg" alt="red trey" />
+                        </div>
+
+                        <div className="slide slideThree">
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151535/Kathrine_Houston_0161_yy6xg0.jpg" alt="purple trey" />
+                        </div>
+                        <div className="slide slideFour">
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151347/Kathrine_Houston_0133_ho06ey.jpg" alt="yellow trey" />
+                        </div>
                     </div>
                     <div className="section" id="bio-page">
 
