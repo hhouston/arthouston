@@ -6,13 +6,14 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    amount = params[:stripeAmount].to_i * 100
-
+    # amount = params[:stripeAmount].to_i * 100
+    amount = params[:amount]
     # Create the customer in Stripe
     customer = Stripe::Customer.create(
-      email: params[:stripeEmail],
-      card: params[:stripeToken]
+      email: params[:email],
+      card: params[:id]
     )
+    debugger;
     # Create the charge using the customer data returned by Stripe API
     charge = Stripe::Charge.create(
       customer: customer.id,

@@ -1,17 +1,34 @@
 import React from 'react';
+import StripeCheckout from 'react-stripe-checkout';
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
+
+      this.onToken = this.onToken.bind(this);
+    }
+
+    onToken (token) {
+      console.log(token);
+      token.amount = 500;
+      fetch('charges', {
+        method: 'POST',
+        body: JSON.stringify(token),
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+          'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+          'Access-Control-Allow-Headers':'X-Requested-With'
+        },
+      }).then(innerToken => {
+        alert(`Purchasd complete!, we will email you a receipt shortly!`);
+      });
     }
 
     componentDidMount() {
         let slideTimeout;
 
         $('#fullpage').fullpage({
-            sectionsColor: [
-                'whitesmoke', '#999', 'whitesmoke', '#777'
-            ],
             anchors: [
                 'home', 'art', 'bio', 'contact'
             ],
@@ -78,7 +95,18 @@ class Home extends React.Component {
                         <div className="slide slideOne">
 
                           <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151559/Kathrine_Houston_0173_frzajo.jpg" alt="blue trey"/>
-
+                          <StripeCheckout
+                            token={this.onToken}
+                            name="Three Comma Co."
+                            description="Big Data Stuff"
+                            image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
+                            ComponentClass="div"
+                            panelLabel="Give Money"
+                            amount={1000}
+                            currency="USD"
+                            stripeKey="pk_test_dbdeGQDD17bcEdpzDqIVDfEJ"
+                            email="house_toncoogs@yahoo.com"
+                          />
                         </div>
                         <div className="slide slideTwo">
                           <img src="http://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151363/Kathrine_Houston_0156_i2sk7a.jpg" alt="red trey" />
@@ -107,6 +135,9 @@ class Home extends React.Component {
                       </div>
                     </div>
                     <div className="section" id="section3">
+                      <form style={{width: "100%", height: "100%"}} action="/your-server-side-code" method="POST">
+
+                      </form>
                     </div>
                 </div>
 
