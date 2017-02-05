@@ -13,7 +13,6 @@ class ChargesController < ApplicationController
       email: params[:email],
       card: params[:id]
     )
-    debugger;
     # Create the charge using the customer data returned by Stripe API
     charge = Stripe::Charge.create(
       customer: customer.id,
