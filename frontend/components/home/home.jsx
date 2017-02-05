@@ -56,6 +56,11 @@ class Home extends React.Component {
 
     }
 
+    componentWillUnmount() {
+      $('#fullpage').fullpage.destroy('all');
+
+    }
+
     render() {
         return (
             <div className="splash-page">
@@ -93,12 +98,11 @@ class Home extends React.Component {
 
                     <div className="section" id="section1">
                         <div className="slide slideOne">
-
-                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151559/Kathrine_Houston_0173_frzajo.jpg" alt="blue trey"/>
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486257508/Kathrine_Houston_0140_fixed_ytdgfv.png" alt="red trey" />
                           <StripeCheckout
                             token={this.onToken}
-                            name="Three Comma Co."
-                            description="Big Data Stuff"
+                            name="Katherine Houston Art"
+                            description="Blue Trey"
                             image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
                             ComponentClass="div"
                             panelLabel="Give Money"
@@ -109,7 +113,19 @@ class Home extends React.Component {
                           />
                         </div>
                         <div className="slide slideTwo">
-                          <img src="http://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151363/Kathrine_Houston_0156_i2sk7a.jpg" alt="red trey" />
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151559/Kathrine_Houston_0173_frzajo.jpg" alt="blue trey"/>
+                          <StripeCheckout
+                            token={this.onToken}
+                            name="Katherine Houston Art"
+                            description="Orange Trey"
+                            image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
+                            ComponentClass="div"
+                            panelLabel="Give Money"
+                            amount={1000}
+                            currency="USD"
+                            stripeKey="pk_test_dbdeGQDD17bcEdpzDqIVDfEJ"
+                            email="house_toncoogs@yahoo.com"
+                          />
                         </div>
 
                         <div className="slide slideThree">
@@ -135,12 +151,8 @@ class Home extends React.Component {
                       </div>
                     </div>
                     <div className="section" id="section3">
-                      <form style={{width: "100%", height: "100%"}} action="/your-server-side-code" method="POST">
-
-                      </form>
                     </div>
                 </div>
-
             </div>
         );
     }

@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
     charge = Stripe::Charge.create(
       customer: customer.id,
       amount: amount,
-      description: 'Art Houstno customer',
+      description: 'Art Houston customer',
       currency: 'usd'
     )
 
