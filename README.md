@@ -28,19 +28,13 @@ The prototype will use materials from the current [portfolio](www.katherinehoust
 - View Featured Pieces
 - Purchase Items
 
-* [View Wireframes](docs/wireframes)
+### [Wireframes](docs/wireframes)
 
 ### Future features
 
 - [ ] Email authentication
-- [ ] Admin privileges (upload new content, manage purchases through portal, sending newsletter)
-- [ ] Logo
+- [ ] Admin privileges (upload art/manage purchases)
 - [ ] Proper hosting and domain
-
-
-### Wireframes
-
-[wireframes](docs/wireframes)
 
 ### Technologies & Technical Challenges
 
@@ -54,8 +48,6 @@ The primary technical challenges will be:
 - Tracking and processing orders to be 100% bug free for a good user experience
 - Enticing UI and adequate design to impress art lovers
 - Mobile first design using media queries
-
-### Code Snippets
 
 [splash_page]: ./docs/images/splash-page.png "ArtHouston Splash Page"
 [slider]: ./docs/images/trey-slider.png "Trey Slider"
