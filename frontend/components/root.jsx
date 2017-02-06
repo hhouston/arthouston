@@ -4,8 +4,8 @@ import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-ro
 import { render } from 'react-dom';
 
 import App from './app';
-import SessionFormContainer from './session/session_form_container';
-import Home from './home/home';
+import ProfileContainer from './profile/profile_container';
+import HomeContainer from './home/home_container';
 
 function hashLinkScroll() {
   const { hash } = window.location;
@@ -34,7 +34,8 @@ const Root = ({ store }) => {
     <Provider store={ store }>
       <Router history={ browserHistory } onUpdate={hashLinkScroll}>
         <Route path="/" component={ App }>
-          <IndexRoute component={ Home }/>
+          <IndexRoute component={ HomeContainer } />
+          <Route path="/profile" component={ ProfileContainer } />
         </Route>
       </Router>
     </Provider>

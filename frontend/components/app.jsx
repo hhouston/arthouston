@@ -4,9 +4,6 @@ import HomeContainer from './home/home_container';
 
 const App = ({ children }) => (
   <div>
-    <header>
-      <HomeContainer />
-    </header>
     { children }
   </div>
 );

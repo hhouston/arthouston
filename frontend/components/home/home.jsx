@@ -1,15 +1,20 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import ProfileModalContainer from '../profile/profile_container';
+import LoginFormContainer from '../session/login_form_container';
+
+import { Link } from 'react-router';
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
 
       this.onToken = this.onToken.bind(this);
+      this.purchase = this.purchase.bind(this);
+
     }
 
     onToken (token) {
-      console.log(token);
       token.amount = 500;
       fetch('charges', {
         method: 'POST',
@@ -21,8 +26,17 @@ class Home extends React.Component {
           'Access-Control-Allow-Headers':'X-Requested-With'
         },
       }).then(innerToken => {
-        alert(`Purchasd complete!, we will email you a receipt shortly!`);
       });
+    }
+
+    purchase () {
+      if (this.props.currentUser) {
+        console.log("current");
+      } else {
+        console.log("not current");
+
+        return <ProfileModal />;
+      }
     }
 
     componentDidMount() {
@@ -48,7 +62,7 @@ class Home extends React.Component {
             onLeave: function(index, direction) {
                 //after leaving section 1 (home) and going anywhere else, whether scrolling down to next section or clicking a nav link, this SHOULD stop the slideshow and allow you to navigate the site...but it does not
                 if (index !== '1') {
-                    console.log('on leaving the slideshow/section1');
+                    // console.log('on leaving the slideshow/section1');
                     // clearInterval(slideTimeout);
                 }
             }
@@ -56,31 +70,27 @@ class Home extends React.Component {
 
     }
 
-    componentWillUnmount() {
-      $('#fullpage').fullpage.destroy('all');
-
-    }
-
     render() {
+
         return (
             <div className="splash-page">
 
                 <header id="header">
                     <ul id="nav">
                         <li data-menuanchor="home">
-                            <a href="#home">home</a>
+                            <a href="/#home">home</a>
 
                         </li>
                         <li data-menuanchor="art">
-                            <a href="#art">art</a>
+                            <a href="/#art">art</a>
 
                         </li>
                         <li data-menuanchor="bio">
-                            <a href="#bio">bio</a>
+                            <a href="/#bio">bio</a>
 
                         </li>
                         <li data-menuanchor="contact">
-                            <a href="#contact">contact</a>
+                            <a href="/#contact">contact</a>
 
                         </li>
                     </ul>
@@ -90,15 +100,28 @@ class Home extends React.Component {
                       <div className="jumbotron">
                         <h1>Katherine Houston Studios</h1>
                         <p className="lead">+ Upcoming: Genesis Valentines Showing: February 14th, Saturday</p>
+                        <br />
+                        <br />
+                        <br />
+
+                        <a data-menuanchor="art" href="#art">down</a>
                       </div>
-                      <button data-menuanchor="art">
-                        <a href="#art">art</a>
-                      </button>
                     </div>
 
                     <div className="section" id="section1">
                         <div className="slide slideOne">
                           <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486257508/Kathrine_Houston_0140_fixed_ytdgfv.png" alt="red trey" />
+
+                          <label>
+                            Title: Blue Trey
+                          </label>
+                          <label>
+                            45 X 10 X 1.5
+                          </label>
+                          <label>
+                            Price: $975
+                          </label>
+
                           <StripeCheckout
                             token={this.onToken}
                             name="Katherine Houston Art"
@@ -110,14 +133,19 @@ class Home extends React.Component {
                             currency="USD"
                             stripeKey="pk_test_dbdeGQDD17bcEdpzDqIVDfEJ"
                             email="house_toncoogs@yahoo.com"
-                          />
+                          >
+                            <button className='purchase-btn'>
+                              Purchase
+                            </button>
+                          </StripeCheckout>
                         </div>
                         <div className="slide slideTwo">
                           <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151559/Kathrine_Houston_0173_frzajo.jpg" alt="blue trey"/>
+
                           <StripeCheckout
                             token={this.onToken}
                             name="Katherine Houston Art"
-                            description="Orange Trey"
+                            description="Blue Trey"
                             image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
                             ComponentClass="div"
                             panelLabel="Give Money"

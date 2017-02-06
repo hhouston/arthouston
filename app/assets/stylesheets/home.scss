@@ -68,12 +68,6 @@ img {
   padding: 0 50px;
 }
 
-.jumbotron {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-}
 .bg {
   background: url('https://res.cloudinary.com/drhenvicq/image/upload/v1486073160/arthouston-background_kl4pkc.jpg') no-repeat center center;
   // position: fixed;
@@ -85,7 +79,12 @@ img {
 }
 
 .jumbotron {
-  height: 75%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  height: 100%;
   color: white;
   text-shadow: #444 0 1px 1px;
   // background:transparent;

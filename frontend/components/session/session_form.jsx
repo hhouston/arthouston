@@ -100,136 +100,19 @@ class SessionForm extends React.Component {
         );
     }
 
-    navLink() {
-        if (this.props.formType === "login") {
-            return <Link to="/signup">Sign Up</Link>;
-        } else {
-            return <Link to="/login">Login</Link>;
-        }
-    }
-
     render() {
-        const loginButton = <Button className="btn-warning test" bsSize="sm" onClick={this.openLoginModal}>
-            Login
-        </Button>;
-        const loginLink = <a href="#" onClick={this.openLoginModal}>Login</a>;
-        const signUpButton = <Button bsStyle="primary" bsSize="sm" onClick={this.openSignUpModal}>
-            Sign Up
-        </Button>;
-        const signUpLink = <a href="#" onClick={this.openSignUpModal}>Sign Up</a>;
-
-        const demoButton = <Button bsStyle="primary" bsSize="sm" onClick={this.demoLogin}>
-            Demo
-        </Button>;
-        const demoLink = <a href="#" onClick={this.demoLogin}>Demo</a>;
-
-        const hostLink = <a href="/#/new">Host</a>;
-
-        let modal;
-        if (this.state.showLoginModal === true) {
-            modal = <Modal className="modal" show={this.state.showLoginModal} onHide={this.closeLoginModal}>
-                <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <div className="login-title">
-                        <h2>Login</h2>
-                    </div>
-
-                    {this.renderErrors()}
-                    <div className="login-form row">
-                        <span className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <label>
-                                Email:
-                                <input type="text" value={this.state.email} onChange={this.update("email")} className="login-input"/>
-                            </label>
-                        </span>
-                        <span className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <label>
-                                Password:
-                                <input type="password" value={this.state.password} onChange={this.update("password")} className="login-input"/>
-                            </label>
-                        </span>
-                        <br/>
-                      </div>
-
-                        <input type="submit" value="Submit"/>
-                </form>
-                <p>Don't have an account? {signUpButton}</p>
-            </Modal>;
-        } else {
-            modal = <Modal className="modal" show={this.state.showSignUpModal} onHide={this.closeSignUpModal}>
-              <form onSubmit={this.handleSubmit} className="login-form-box">
-                  <div className="login-title">
-                      <h2>Sign Up</h2>
-                  </div>
-
-                  {this.renderErrors()}
-                  <div className="login-form row">
-                      <span className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                          <label>
-                              Email:
-                              <input type="text" value={this.state.email} onChange={this.update("email")} className="login-input"/>
-                          </label>
-                      </span>
-                      <span className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                          <label>
-                              Password:
-                              <input type="password" value={this.state.password} onChange={this.update("password")} className="login-input"/>
-                          </label>
-                      </span>
-                      <span className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                          <label>
-                              First Name:
-                              <input type="text" value={this.state.fname} onChange={this.update("fname")} className="login-input"/>
-                          </label>
-                      </span>
-                      <span className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                          <label>
-                              Last Name:
-                              <input type="password" value={this.state.lname} onChange={this.update("lname")} className="login-input"/>
-                          </label>
-                      </span>
-                      <br/>
-                    </div>
-
-                      <input type="submit" value="Submit"/>
-              </form>
-              <p>Already have an account? {loginLink}</p>
-
-            </Modal>;
-
-        }
+      let page;
+      if (this.props.loggedIn) {
+        page = <h2>LoggedIn</h2>;
+      } else {
+        page = <h1>Not LoggedIn</h1>;
+      }
+      debugger;
         return (
-            <div>
-                <nav className="navbar navbar-default navbar-fixed-top">
-                    <div className="container-fluid">
-                        <div className="navbar-header">
-                            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-                                <span className="sr-only">Toggle navigation</span>
-                                <span className="icon-bar"></span>
-                                <span className="icon-bar"></span>
-                                <span className="icon-bar"></span>
-                            </button>
-                            <a className="navbar-brand" href="#">
-                                <p>ScareBnB</p>
-                            </a>
-                        </div>
-
-                        <div className="collapse navbar-collapse" id="navbar-collapse">
-                            <form className="navbar-form navbar-left">
-
-                            </form>
-                            <ul className="nav navbar-nav navbar-right">
-                                <li>{hostLink}</li>
-                                <li>{demoLink}</li>
-                                <li>{loginLink}</li>
-                                <li>{signUpLink}</li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-
-                {modal}
+            <div style={{backgroundColor: 'red'}}>
+              {page}
+              profile page
             </div>
-
         );
     }
 }
