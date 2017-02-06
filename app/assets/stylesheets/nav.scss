@@ -9,6 +9,7 @@
 }
 
 #nav li {
+  float: right;
   display:inline-block;
   margin: 10px;
   color: #000;
@@ -42,7 +43,10 @@
   color: #fff;
 }
 #nav{
+
   position:fixed;
+  display: flex;
+  justify-content: center;
   top:0;
   left:0;
   height: 40px;

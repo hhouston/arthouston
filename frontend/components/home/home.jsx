@@ -77,22 +77,32 @@ class Home extends React.Component {
 
                 <header id="header">
                     <ul id="nav">
+                      <div>
                         <li data-menuanchor="home">
-                            <a href="/#home">home</a>
-
+                          <a href="/#home">home</a>
                         </li>
+                      </div>
+                      <div>
                         <li data-menuanchor="art">
-                            <a href="/#art">art</a>
-
+                          <a href="/#art">art</a>
                         </li>
+                      </div>
+
+                      <div>
                         <li data-menuanchor="bio">
-                            <a href="/#bio">bio</a>
-
+                          <a href="/#bio">bio</a>
                         </li>
+                      </div>
+
+                      <div>
                         <li data-menuanchor="contact">
-                            <a href="/#contact">contact</a>
-
+                          <a href="/#contact">more!</a>
                         </li>
+                      </div>
+
+
+
+
                     </ul>
                 </header>
                 <div id="fullpage">
@@ -104,7 +114,7 @@ class Home extends React.Component {
                         <br />
                         <br />
 
-                        <a data-menuanchor="art" href="#art">down</a>
+                        <a data-menuanchor="art" className="arrow-down" href="#art"></a>
                       </div>
                     </div>
 
@@ -355,23 +365,32 @@ class Home extends React.Component {
 
 
                     </div>
-                    <div className="section" id="bio-page">
 
-                      <div className="img-container">
-                        <img id="bio-img" src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,q_80,w_1520/v1486063290/galv-water-painting_ebrwzg.jpg" alt="katherine houston profile" />
-                      </div>
-                      <div id="bio-text">
-                        <p>Much like trying to hold on to sand in your hand, control is the surprising outcome of letting go. It is this push-and-pull that drives me to make my art. By fully relenting to my work, I somehow gain control.</p>
-                        <br />
-                        <p>As with any work of art, I start with a blank canvas – or, often in my case, a piece of Plexiglas. I use the technique of "reverse painting," where I apply acrylic paint to the back of a piece of Plexiglas. On the other side, beneath the layers of paint, lies the fruit of my labor.</p>
-                        <br />
-                        <p>While my method of painting lends itself to the creation of abstract imagery, I still find inspiration in places grounded in reality such as a city or landscape. I choose beautiful colors that fuel my brush strokes and pull me into the painting – a serene, happy place of my own making.</p>
-                        <br />
-                        <p>Like a blind contour drawing, "reverse painting" is about having control over something that cannot fully be controlled. When I turn the plexiglass over I see the totality of what I have created: a beautiful, aesthetic interpretation of how the colors speak to me.</p>
-                      </div>
-                    </div>
                     <div className="section" id="section3">
+                        <div className="img-container">
+                          <img id="bio-img" src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,q_80,w_1520/v1486063290/galv-water-painting_ebrwzg.jpg" alt="katherine houston profile" />
+                        </div>
+                        <div id="bio-text">
+                          <p>Much like trying to hold on to sand in your hand, control is the surprising outcome of letting go. It is this push-and-pull that drives me to make my art. By fully relenting to my work, I somehow gain control.</p>
+                          <br />
+                          <p>As with any work of art, I start with a blank canvas – or, often in my case, a piece of Plexiglas. I use the technique of "reverse painting," where I apply acrylic paint to the back of a piece of Plexiglas. On the other side, beneath the layers of paint, lies the fruit of my labor.</p>
+                          <br />
+                          <p>While my method of painting lends itself to the creation of abstract imagery, I still find inspiration in places grounded in reality such as a city or landscape. I choose beautiful colors that fuel my brush strokes and pull me into the painting – a serene, happy place of my own making.</p>
+                          <br />
+                          <p>Like a blind contour drawing, "reverse painting" is about having control over something that cannot fully be controlled. When I turn the plexiglass over I see the totality of what I have created: a beautiful, aesthetic interpretation of how the colors speak to me.</p>
+                        </div>
+                    </div>
 
+                    <div className="section section2" style={{display:'flex', alignItems:'center'}} id="bio-page">
+                        <iframe loop muted data-auto-play
+                          id="myVideo"
+                          src="https://player.vimeo.com/video/117635175"
+                          frameBorder="0">
+                        </iframe>
+
+                        <div className="layer">
+                          <a href="http://katherinehoustonart.com">See more work!</a>
+                        </div>
                     </div>
                 </div>
             </div>
