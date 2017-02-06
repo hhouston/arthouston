@@ -56,14 +56,14 @@ class Home extends React.Component {
                 //on page load, start the slideshow
                 slideTimeout = setInterval(function() {
                     // $.fn.fullpage.moveSlideRight();
-                }, 5000);
+                }, 10000);
             },
 
             onLeave: function(index, direction) {
                 //after leaving section 1 (home) and going anywhere else, whether scrolling down to next section or clicking a nav link, this SHOULD stop the slideshow and allow you to navigate the site...but it does not
                 if (index !== '1') {
                     // console.log('on leaving the slideshow/section1');
-                    // clearInterval(slideTimeout);
+                    clearInterval(slideTimeout);
                 }
             }
         });
@@ -110,10 +110,10 @@ class Home extends React.Component {
 
                     <div className="section" id="section1">
                         <div className="slide slideOne">
-                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486257508/Kathrine_Houston_0140_fixed_ytdgfv.png" alt="red trey" />
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486367939/Kathrine_Houston_0156_fixed_uvp15s.png" alt="red trey" />
 
                           <label>
-                            Title: Blue Trey
+                            Acrylic Platter
                           </label>
                           <label>
                             45 X 10 X 1.5
@@ -140,7 +140,17 @@ class Home extends React.Component {
                           </StripeCheckout>
                         </div>
                         <div className="slide slideTwo">
-                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151559/Kathrine_Houston_0173_frzajo.jpg" alt="blue trey"/>
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486367919/Kathrine_Houston_0133_fixed_mso5uk.png" alt="red trey" />
+
+                          <label>
+                            Acrylic Platter
+                          </label>
+                          <label>
+                            45 X 10 X 1.5
+                          </label>
+                          <label>
+                            Price: $975
+                          </label>
 
                           <StripeCheckout
                             token={this.onToken}
@@ -153,15 +163,197 @@ class Home extends React.Component {
                             currency="USD"
                             stripeKey="pk_test_dbdeGQDD17bcEdpzDqIVDfEJ"
                             email="house_toncoogs@yahoo.com"
-                          />
+                          >
+                            <button className='purchase-btn'>
+                              Purchase
+                            </button>
+                          </StripeCheckout>
                         </div>
-
                         <div className="slide slideThree">
-                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151535/Kathrine_Houston_0161_yy6xg0.jpg" alt="purple trey" />
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486367928/Kathrine_Houston_0145_fixed_srur6c.png" alt="red trey" />
+
+                          <label>
+                            Acrylic Platter
+                          </label>
+                          <label>
+                            45 X 10 X 1.5
+                          </label>
+                          <label>
+                            Price: $975
+                          </label>
+
+                          <StripeCheckout
+                            token={this.onToken}
+                            name="Katherine Houston Art"
+                            description="Blue Trey"
+                            image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
+                            ComponentClass="div"
+                            panelLabel="Give Money"
+                            amount={1000}
+                            currency="USD"
+                            stripeKey="pk_test_dbdeGQDD17bcEdpzDqIVDfEJ"
+                            email="house_toncoogs@yahoo.com"
+                          >
+                            <button className='purchase-btn'>
+                              Purchase
+                            </button>
+                          </StripeCheckout>
                         </div>
                         <div className="slide slideFour">
-                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486151347/Kathrine_Houston_0133_ho06ey.jpg" alt="yellow trey" />
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486257508/Kathrine_Houston_0140_fixed_ytdgfv.png" alt="red trey" />
+
+                          <label>
+                            Acrylic Platter
+                          </label>
+                          <label>
+                            45 X 10 X 1.5
+                          </label>
+                          <label>
+                            Price: $975
+                          </label>
+
+                          <StripeCheckout
+                            token={this.onToken}
+                            name="Katherine Houston Art"
+                            description="Blue Trey"
+                            image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
+                            ComponentClass="div"
+                            panelLabel="Give Money"
+                            amount={1000}
+                            currency="USD"
+                            stripeKey="pk_test_dbdeGQDD17bcEdpzDqIVDfEJ"
+                            email="house_toncoogs@yahoo.com"
+                          >
+                            <button className='purchase-btn'>
+                              Purchase
+                            </button>
+                          </StripeCheckout>
                         </div>
+                        <div className="slide slideFive">
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486367936/Kathrine_Houston_0150_fixed_fv7j8c.png" alt="red trey" />
+
+                          <label>
+                            Acrylic Platter
+                          </label>
+                          <label>
+                            45 X 10 X 1.5
+                          </label>
+                          <label>
+                            Price: $975
+                          </label>
+
+                          <StripeCheckout
+                            token={this.onToken}
+                            name="Katherine Houston Art"
+                            description="Blue Trey"
+                            image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
+                            ComponentClass="div"
+                            panelLabel="Give Money"
+                            amount={1000}
+                            currency="USD"
+                            stripeKey="pk_test_dbdeGQDD17bcEdpzDqIVDfEJ"
+                            email="house_toncoogs@yahoo.com"
+                          >
+                            <button className='purchase-btn'>
+                              Purchase
+                            </button>
+                          </StripeCheckout>
+                        </div>
+                        <div className="slide slideSix">
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486367947/Kathrine_Houston_0165_fixed_ju2nvj.png" alt="red trey" />
+
+                          <label>
+                            Acrylic Platter
+                          </label>
+                          <label>
+                            45 X 10 X 1.5
+                          </label>
+                          <label>
+                            Price: $975
+                          </label>
+
+                          <StripeCheckout
+                            token={this.onToken}
+                            name="Katherine Houston Art"
+                            description="Blue Trey"
+                            image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
+                            ComponentClass="div"
+                            panelLabel="Give Money"
+                            amount={1000}
+                            currency="USD"
+                            stripeKey="pk_test_dbdeGQDD17bcEdpzDqIVDfEJ"
+                            email="house_toncoogs@yahoo.com"
+                          >
+                            <button className='purchase-btn'>
+                              Purchase
+                            </button>
+                          </StripeCheckout>
+                        </div>
+                        <div className="slide slideSeven">
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486367951/Kathrine_Houston_0173_fixed_ahv2n8.png" alt="red trey" />
+
+                          <label>
+                            Acrylic Platter
+                          </label>
+                          <label>
+                            45 X 10 X 1.5
+                          </label>
+                          <label>
+                            Price: $975
+                          </label>
+
+                          <StripeCheckout
+                            token={this.onToken}
+                            name="Katherine Houston Art"
+                            description="Blue Trey"
+                            image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
+                            ComponentClass="div"
+                            panelLabel="Give Money"
+                            amount={1000}
+                            currency="USD"
+                            stripeKey="pk_test_dbdeGQDD17bcEdpzDqIVDfEJ"
+                            email="house_toncoogs@yahoo.com"
+                          >
+                            <button className='purchase-btn'>
+                              Purchase
+                            </button>
+                          </StripeCheckout>
+                        </div>
+                        <div className="slide slideEight">
+                          <img src="https://res.cloudinary.com/drhenvicq/image/upload/c_scale,w_731/v1486368013/Kathrine_Houston_0161_fixed_wlja8d.png" alt="red trey" />
+
+                          <label>
+                            Acrylic Platter
+                          </label>
+                          <label>
+                            45 X 10 X 1.5
+                          </label>
+                          <label>
+                            Price: $975
+                          </label>
+
+                          <StripeCheckout
+                            token={this.onToken}
+                            name="Katherine Houston Art"
+                            description="Blue Trey"
+                            image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
+                            ComponentClass="div"
+                            panelLabel="Give Money"
+                            amount={1000}
+                            currency="USD"
+                            stripeKey="pk_test_dbdeGQDD17bcEdpzDqIVDfEJ"
+                            email="house_toncoogs@yahoo.com"
+                          >
+                            <button className='purchase-btn'>
+                              Purchase
+                            </button>
+                          </StripeCheckout>
+                        </div>
+
+
+
+
+
                     </div>
                     <div className="section" id="bio-page">
 
@@ -179,10 +371,7 @@ class Home extends React.Component {
                       </div>
                     </div>
                     <div className="section" id="section3">
-                      <video id="myVideo" loop muted data-autoplay>
-                        <source src="https://vimeo.com/117635175" type="video/mp4" />
-                        <source src="https://vimeo.com/117635175" type="video/webm" />
-                      </video>
+
                     </div>
                 </div>
             </div>
