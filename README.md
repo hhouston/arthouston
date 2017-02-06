@@ -10,9 +10,9 @@ The prototype will use materials from the current [portfolio](www.katherinehoust
 *Mobile first design*
 
 ## Stack
-- [ ] Ruby on Rails
-- [ ] ReactJS
-- [ ] PostgreSQL
+- Ruby on Rails
+- ReactJS
+- PostgreSQL
 
 ## Landing Page
 
@@ -23,10 +23,10 @@ The prototype will use materials from the current [portfolio](www.katherinehoust
 
 ### Features
 
-- Hosting on Heroku
-- Integration with Stripe API
-- View Featured Pieces
-- Purchase Items
+- [x] Hosting on Heroku
+- [x] Integration with Stripe API
+- [x] View Featured Pieces
+- [x] Purchase Items
 
 ### [Wireframes](docs/wireframes)
 
