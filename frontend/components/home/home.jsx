@@ -179,6 +179,10 @@ class Home extends React.Component {
                       </div>
                     </div>
                     <div className="section" id="section3">
+                      <video id="myVideo" loop muted data-autoplay>
+                        <source src="https://vimeo.com/117635175" type="video/mp4" />
+                        <source src="https://vimeo.com/117635175" type="video/webm" />
+                      </video>
                     </div>
                 </div>
             </div>

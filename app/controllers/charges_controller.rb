@@ -21,9 +21,9 @@ class ChargesController < ApplicationController
       currency: 'usd'
     )
 
-    purchase = Purchase.create(email: params[:email], card: params[:token],
-      amount: params[:amount], currency: charge.currency, customer_id: customer.id,
-      product_id: params[:product_id])
+    # purchase = Purchase.create(email: params[:email], card: params[:token],
+    #   amount: params[:amount], currency: charge.currency, customer_id: customer.id,
+    #   product_id: params[:product_id])
 
   # place more code upon successfully creating the charge
   rescue Stripe::CardError => e

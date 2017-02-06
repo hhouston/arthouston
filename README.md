@@ -1,8 +1,7 @@
 ## arthouston
 e-commerce site for KatherineHoustonArt
 
-
-### Background
+[ArtHouston](https://arthouston.herokuapp.com/)
 
 This website is built to display the art work by Katherine Houston. Furthermore it will incorporate the Stripe API to process orders and a backend to host the user's profile information and completed orders.
 
@@ -10,14 +9,26 @@ The prototype will use materials from the current [portfolio](www.katherinehoust
 
 *Mobile first design*
 
-### Functionality & MVP
+## Stack
+- [ ] Ruby on Rails
+- [ ] ReactJS
+- [ ] PostgreSQL
 
-With this extension, users will be able to:
+## Landing Page
 
-- [ ] Sign up for an account
-- [ ] View individual art work, installations, and press articles
-- [ ] Purchase available pieces
-- [ ] Keep track of orders
+![Splash Page][splash_page]
+
+## Trey Slider
+![Trey Sliders][slider]
+
+### Features
+
+- Hosting on Heroku
+- Integration with Stripe API
+- View Featured Pieces
+- Purchase Items
+
+* [View Wireframes](docs/wireframes)
 
 ### Future features
 
@@ -44,30 +55,7 @@ The primary technical challenges will be:
 - Enticing UI and adequate design to impress art lovers
 - Mobile first design using media queries
 
-### Implementation Timeline
+### Code Snippets
 
-**Day 1**: Get started on the database design of the website based on credentials needed for Stripe API - Auth
-
-- Sign Up/Login
-- Completed DB Schema
-- General Home Page Layout
-
-**Day 2**: Make payment request
-
-- Example art on splash page to test payment processing
-- Successful payment transaction with Stripe API
-
-**Day 3**: List Featured Art on Home Page with generic nav bar
-
-- Routes: Pieces, Installations, Photos, News, Contact
-- Generic nav bar (not collapsing yet)
-
-**Day 4**: CSS for displaying content in all of the routes and media queries for collapsing nav bar
-
-- Using media queries allow the nav bar to hide when on mobile phones
-- Proper styling for Art pieces and Art detail page
-
-**Day 5**: Admin feature: display purchases
-- Allow admin to view processed orders
-- Differentiate available pieces from ones that have sold
-- Production README
+[splash_page]: ./docs/images/splash-page.png "ArtHouston Splash Page"
+[slider]: ./docs/images/trey-slider.png "Trey Slider"
